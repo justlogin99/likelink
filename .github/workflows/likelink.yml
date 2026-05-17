@@ -64,8 +64,8 @@ jobs:
 
       - name: 执行续订
         env:
-          GODLIKE_ID: ${{ secrets.GODLIKE_ID }}
-          # 已移除 GODLIKE_ID_INPUT
+          # 已更新为读取 INFO 变量
+          INFO: ${{ secrets.INFO }}
           TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
           TG_CHAT_ID: ${{ secrets.TG_CHAT_ID }}
         run: python renew.py
