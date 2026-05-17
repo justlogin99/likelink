@@ -1,7 +1,11 @@
-name: Godlike URL 续期
+name: Deploy
 
 on:
-  workflow_dispatch: # 仅保留手动触发，移除 input 框
+  workflow_dispatch:
+  schedule:
+    - cron: '0 */2 * * *'
+  repository_dispatch:
+    types: [service-down-alert]
 
 permissions:
   actions: write
